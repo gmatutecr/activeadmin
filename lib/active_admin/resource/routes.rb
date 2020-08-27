@@ -5,6 +5,7 @@ module ActiveAdmin
       # @return [String] the path to this resource collection page
       # @example "/admin/posts"
       def route_collection_path(params = {}, additional_params = {})
+        #binding.pry
         route_builder.collection_path(params, additional_params)
       end
 

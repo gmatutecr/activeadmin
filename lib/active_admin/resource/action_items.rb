@@ -7,6 +7,7 @@ module ActiveAdmin
 
       # Adds the default action items to a resource when it's initialized
       def initialize(*args)
+        #binding.pry
         super
         add_default_action_items
       end
@@ -55,6 +56,7 @@ module ActiveAdmin
 
       # Adds the default action items to each resource
       def add_default_action_items
+       # binding.pry
         add_default_new_action_item
         add_default_edit_action_item
         add_default_show_action_item
@@ -63,8 +65,10 @@ module ActiveAdmin
       # Adds the default New link on index
       def add_default_new_action_item
         add_action_item :new, only: :index do
+
           if controller.action_methods.include?('new') && authorized?(ActiveAdmin::Auth::CREATE, active_admin_config.resource_class)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
+            #binding.pry
             link_to localizer.t(:new_model), new_resource_path
           end
         end
@@ -73,8 +77,10 @@ module ActiveAdmin
       # Adds the default Edit link on show
       def add_default_edit_action_item
         add_action_item :edit, only: :show do
+          #binding.pry
           if controller.action_methods.include?('edit') && authorized?(ActiveAdmin::Auth::UPDATE, resource)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
+            #binding.pry
             link_to localizer.t(:edit_model), edit_resource_path(resource)
           end
         end
@@ -84,6 +90,7 @@ module ActiveAdmin
       def add_default_show_action_item
         add_action_item :destroy, only: :show do
           if controller.action_methods.include?('destroy') && authorized?(ActiveAdmin::Auth::DESTROY, resource)
+            #binding.pry
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to localizer.t(:delete_model), resource_path(resource), method: :delete,
               data: {confirm: localizer.t(:delete_confirmation)}

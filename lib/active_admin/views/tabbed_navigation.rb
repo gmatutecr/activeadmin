@@ -42,7 +42,7 @@ module ActiveAdmin
       def build_menu_item(item)
         li id: item.id do |li|
           li.add_class "current" if item.current? assigns[:current_tab]
-
+         # binding.pry
           if url = item.url(self)
             text_node link_to item.label(self), url, item.html_options
           else
