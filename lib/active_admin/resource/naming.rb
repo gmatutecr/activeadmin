@@ -30,11 +30,7 @@ module ActiveAdmin
       # Forms use the model's original `param_key`, so we can't use our
       # custom `resource_name` when the model's been renamed in ActiveAdmin.
       def param_key
-        if resource_class.respond_to? :model_name
-          resource_class.model_name.param_key
-        else
           resource_name.param_key
-        end
       end
     end
 

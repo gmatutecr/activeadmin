@@ -14,8 +14,8 @@ end
 module ActiveAdmin
   class FormBuilder < ::Formtastic::FormBuilder
     include MethodOrProcHelper
+    self.input_namespaces = [Object, ::ActiveAdmin::Inputs, ::Formtastic::Inputs]
 
-    self.input_namespaces = [::Object, ::ActiveAdmin::Inputs, ::Formtastic::Inputs]
 
     # TODO: remove both class finders after formtastic 4 (where it will be default)
     self.input_class_finder = ::Formtastic::InputClassFinder

@@ -18,12 +18,12 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'
 
-  s.add_dependency 'arbre',               '= 1.0.2'
+  s.add_dependency 'arbre',               '= 1.0.3'
   s.add_dependency 'bourbon',             ">= 1.0.0", "< 4"
   s.add_dependency 'coffee-rails'
-  s.add_dependency 'formtastic',          '~> 3.1'
+  s.add_dependency 'formtastic',          '= 3.1.5'
   s.add_dependency 'formtastic_i18n'
-  s.add_dependency 'inherited_resources', '= 1.5.1'
+  s.add_dependency 'inherited_resources'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'jquery-ui-rails'
   s.add_dependency 'kaminari',            '>= 0.15', '< 2.0'
